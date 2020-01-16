@@ -1,0 +1,115 @@
+{{ regiForm.value | json  }}
+<form #regiForm="ngForm">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="Name">First Name</label>
+            <input type="text" required class="form-control" pattern="^[a-zA-Z]*" #Vname="ngModel" name="name" ngModel
+                id="name" placeholder="First Name">
+
+                <div class="alert-danger" *ngIf="Vname.touched && Vname.invalid" style="width:50%;">Name is not valid
+                </div>
+                <div class="alert-success" *ngIf="Vname.touched && Vname.valid" style="width: 50%;">OK</div>
+
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Last Name</label>
+            <input type="text" required #Vlname="ngModel" ngModel  class="form-control" name="lastname" id="lastname" placeholder="Last Name">
+                <div class="alert-danger" *ngIf="Vlname.touched && Vlname.invalid" 
+                style="width:50%;">Last Name is not valid
+                </div>
+                <div class="alert-success" *ngIf="Vname.touched && Vname.valid" style="width: 50%;">OK</div>
+    
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Email</label>
+            <input type="text" ngModel name="email" pattern="[[a-zA-Z0-9_\-\.]+@([a-zA-Z0-9_\-\.]+)\.[a-zA-Z]{2,5}]*"
+                #Vemail="ngModel" class="form-control" [class.alert-danger]=" Vemail.touched   && Vemail.invalid"
+                id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+            <div *ngIf="Vemail.touched && Vemail.invalid" style="width:20px;height: 20px;"
+                class="spinner-border text-danger" role="status">
+                <span class="sr-only">...</span>
+            </div>
+                 <div class="alert-danger" *ngIf="Vemail.touched && Vemail.invalid" style="width:50%;">Email is not valid
+            </div>
+            <div class="alert-success" *ngIf="Vemail.touched && Vemail.valid" style="width: 50%;">OK</div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Confirm Email</label>
+            <input type="text" ngModel #Vcemail="ngModel" required  class="form-control" name="cemail" id="inputEmail4" placeholder="Email">
+            <div class="alert-danger" *ngIf="Vcemail.touched && Vemail.value!==Vcemail.value" style="width:50%;">Email is not valid
+            </div>
+            <div class="alert-success" *ngIf="Vcemail.touched && Vemail.value===Vcemail.value" style="width: 50%;">OK</div>   
+        </div>
+    </div>
+
+
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Password</label>
+            <input type="password" ngModel #Vpass="ngModel" required 
+            pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*" 
+             class="form-control" name="password" id="inputEmail4" placeholder="Email">
+            <div class="alert-danger" *ngIf="Vpass.touched && Vpass.invalid" style="width:200%;">
+                Passwords will contain at least 1 upper case letter, 1 lower case letter ,least 1 number or special character            </div>
+            <div class="alert-success" *ngIf="Vpass.touched && Vpass.valid" style="width: 50%;">OK</div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputEmail4">Confirm Password</label>
+            <input type="password"  ngModel #Vcpass="ngModel" required class="form-control" name="cpassword" id="inputEmail4" placeholder="Email">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputAddress">Mobile No</label>
+        <input type="text" required class="form-control" name="mobile" id="inputAddress">
+    </div>
+
+    <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <input type="text" class="form-control" id="inputAddress" required name="address1" placeholder="1234 Main St">
+    </div>
+
+    <div class="form-group">
+        <label for="inputAddress2">Address 2</label>
+        <input type="text" class="form-control" id="inputAddress2" required name="address2"
+            placeholder="Apartment, studio, or floor">
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" required name="city" id="inputCity">
+        </div>
+
+        <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <select id="inputState" required name="state" class="form-control">
+                <option selected>Select state</option>
+                <option *ngFor="let st of state"> {{ st }}</option>
+            </select>
+        </div>
+
+        <div class="form-group col-md-2">
+            <label for="inputZip">Zip</label>
+            <input type="text" class="form-control" required name="zip" id="inputZip">
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" required ngModel #Tcheck="ngModel" type="checkbox" name="terms" id="gridCheck">
+            <label class="form-check-label"  for="gridCheck">
+                I accept terms and conditions.
+            </label>
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="!Tcheck.value" class="btn btn-primary">Sign in</button>
+</form>

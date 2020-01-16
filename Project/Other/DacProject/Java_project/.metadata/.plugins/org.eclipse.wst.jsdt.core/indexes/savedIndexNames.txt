@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/home/sunbeam/DacProject/Java_project/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1485167654.index
+513548777.index
+2638757659.index
+2860633242.index
+1147555656.index
+1061072470.index
+2348836234.index

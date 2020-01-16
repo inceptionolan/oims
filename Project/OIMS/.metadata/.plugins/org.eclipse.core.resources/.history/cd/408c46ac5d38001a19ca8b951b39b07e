@@ -1,0 +1,7 @@
+package com.app.dao;
+
+public interface IStudentDao 
+{
+	public Integer registerStudent(Student std);
+	
+}

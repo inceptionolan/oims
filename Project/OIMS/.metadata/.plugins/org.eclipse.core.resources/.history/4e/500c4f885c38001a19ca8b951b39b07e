@@ -1,0 +1,10 @@
+package com.app.pojos;
+
+public class Student {
+	private Integer studentId;
+	private String fName;
+	private String lName;
+	private String role;
+	private Integer mobile;
+	private String password;
+}

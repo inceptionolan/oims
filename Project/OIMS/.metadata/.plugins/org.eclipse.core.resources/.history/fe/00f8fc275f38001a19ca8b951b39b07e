@@ -1,0 +1,13 @@
+package com.app.dao;
+
+import com.app.pojos.Student;
+
+public class StudentDaoImpl implements IStudentDao {
+
+	@Override
+	public Integer registerStudent(Student std) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/home/sunbeam/Videos/Project/OIMS/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3119929872.index
+843101182.index
+4235064302.index
+2559600733.index
+1485167654.index
+2518053292.index
